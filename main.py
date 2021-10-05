@@ -186,12 +186,12 @@ class ExampleApp(QtWidgets.QMainWindow, gui.Ui_MainWindow):
             b = b.replace('\n  • ', '')
             b = b.split('   ')
             b = (r"start notepad++ " + '"'+b[1]+'"')
-            #g = os.system(b)
-            g = subprocess.call(b, shell=True)
-            if g != 0 and g != 1:
-                self.progressBar.hide()
-                text = 'Возможно в имени файла содержаться пробелы или другие символы!'
-                return self.err(text)
+            try:
+                os.startfile(b)
+            except:
+                    self.progressBar.hide()
+                    text = 'Возможно в имени файла содержаться пробелы или другие символы!'
+                    return self.err(text)
 
         else:
 
@@ -202,9 +202,9 @@ class ExampleApp(QtWidgets.QMainWindow, gui.Ui_MainWindow):
                 '\n╚═══════════════════════════════════════════════════════════════════╝', '')
             b = b.replace('\n  • ', '')
             b = b.split('   ')
-            g = subprocess.call('"'+b[1]+'"', shell=True)
-            #g = os.system('"'+b[1]+'"')
-            if g != 0 and g != 1:
+            try:
+                os.startfile('"'+b[1]+'"')
+            except:
                 self.progressBar.hide()
                 text = 'Возможно в имени файла содержаться пробелы или другие символы!'
                 return self.err(text)
