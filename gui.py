@@ -97,7 +97,6 @@ class Ui_MainWindow(object):
         self.groupBox.setTitle(_translate("MainWindow", "Поиск файла"))
         self.label.setText(_translate("MainWindow", "Какой текст содержит файл? "))
         self.pushButton.setText(_translate("MainWindow", "Выбор директории"))
-        self.lineEdit_2.setText(_translate("MainWindow", "01-01-2000"))
         self.checkBox.setText(_translate("MainWindow", "Искать по дате? "))
         self.pushButton_2.setText(_translate("MainWindow", "Поиск"))
         self.groupBox_2.setTitle(_translate("MainWindow", "Найденные файлы"))
